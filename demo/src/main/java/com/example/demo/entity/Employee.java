@@ -3,9 +3,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -17,8 +19,11 @@ import java.util.Date;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String empId;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator")
+    private UUID empId;
 
     @Column
     private String firstName;
@@ -30,6 +35,7 @@ public class Employee {
     private String deptNo;
 
    @Column
+   @Temporal(TemporalType.DATE)
     private Date joiningDate;
 
    @Column
