@@ -4,14 +4,21 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        String str = "ABCDEf";
-        String str2 = "ABCEA";
-        char s[] = str.toCharArray();
-        char s2[] = str2.toCharArray();
-        List list = Arrays.asList(s);
-        List list2 = Arrays.asList(s2);
-        list.retainAll(list2);
-        System.out.println(list);
+//        String str = "ABCDEf";
+//        String str2 = "ABCEA";
+//        char s[] = str.toCharArray();
+//        char s2[] = str2.toCharArray();
+//        List list = Arrays.asList(s);
+//        List list2 = Arrays.asList(s2);
+//        list.retainAll(list2);
+//        System.out.println(list);
+
+
+        String id = UUID.randomUUID().toString();
+        System.out.println(id);
+
+
+
     }
 //    int count =0;
 //    //find common elements
@@ -27,4 +34,7 @@ public class Test {
 //        }
 //        System.out.print(count);
 //    }
+
+
+
 }

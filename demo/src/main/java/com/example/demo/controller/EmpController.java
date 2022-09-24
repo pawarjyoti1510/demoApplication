@@ -24,7 +24,7 @@ public class EmpController {
     }
 
     @DeleteMapping("delete/emp")
-    public ResponseEntity deleteEmployee(@RequestParam ("id") Integer id){
+    public ResponseEntity deleteEmployee(@RequestParam ("id") String id){
         employeeService.deleteEmployee(id);
        return new ResponseEntity(HttpStatus.OK);
     }

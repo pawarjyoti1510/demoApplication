@@ -3,6 +3,7 @@ package com.example.demo.service.serviceImpl;
 import com.example.demo.entity.Employee;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.service.EmployeeService;
+import com.example.demo.util.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee saveEmployee(Employee emp) {
         Employee employee = new Employee();
+       // employee.setEmpId(CommonUtils.generateUUID());
         employee.setFirstName(emp.getFirstName());
         employee.setLastName(emp.getLastName());
         employee.setJoiningDate(emp.getJoiningDate());
@@ -32,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void deleteEmployee(Integer id){
+    public void deleteEmployee(String id){
         Employee employee = employeeRepository.findById(id).get();
         employeeRepository.delete(employee);
     }

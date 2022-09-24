@@ -11,5 +11,5 @@ public interface EmployeeService {
 
     List findAllEmployee();
 
-    void deleteEmployee(Integer id);
+    void deleteEmployee(String id);
 }
